@@ -41,7 +41,7 @@ main{
     width: 90%;
     margin: auto auto;
     /* border: 1px solid blue; */
-    padding-top: 40px;
+    padding-top: 10px;
 }
 .item{
     display: flex;
@@ -52,11 +52,32 @@ main{
     height: 80px;
     width: 100%;
     box-shadow: 0 0 20px #ccc;
-    margin-bottom: 2%;
 }
+.item-icone{
+    padding-left: 15px;
+}
+.item-clicado{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(7, 192, 121);
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 0 20px #ccc;
+} 
+.item-clicado .item-nome{
+    text-decoration: line-through;
+    color: grey;
+}
+
 .item-icone{
     width: 20%;
     /* border: 1px solid yellow; */
+}
+.img-icon{
+    width: 30px;
+    height: 30px;
 }
 .item-nome{
     width: 55%;
