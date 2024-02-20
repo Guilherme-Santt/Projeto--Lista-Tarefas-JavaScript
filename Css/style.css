@@ -37,6 +37,7 @@ button.add{
 }
 main{
     display: flex;
+    gap: 10px;
     flex-flow: row wrap;
     width: 90%;
     margin: auto auto;
@@ -52,6 +53,7 @@ main{
     height: 80px;
     width: 100%;
     box-shadow: 0 0 20px #ccc;
+
 }
 .item-icone{
     padding-left: 15px;

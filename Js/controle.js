@@ -1,28 +1,43 @@
+let contador = 0;
+let input = document.getElementById("inputTarefa");
+let btnAdd = document.getElementById("btn-add");
+let main = document.getElementById("areaLista");
 
-function teste(){
-    alert('teste');
-}
-
+// ADICIONAR ITEM Á LISTA
 function addTarefa(){
-    let input = document.getElementById("inputTarefa");
-    let btnAdd = document.getElementById("btn-add");
-    let main = document.getElementById("areaLista");
     let ValorInput = input.value;
-
     if((ValorInput !== "") && (ValorInput !== null) && (ValorInput !== undefined)){
+        ++contador;
         let NovoItem = 
-            `<div class="item">
-                <div class="item-icone">
-                    <img class="img-icon" src="icons/verificar.png">
-                </div>
-                <div class="item-nome">
-                    teste de tarefa
-                </div>
-                <div class="item-botão">
-                        <button class="delete">Deletar</button>
-                </div>
-            </div>`; 
+        `<div class="item" id="${contador}">
+            <div onclick="marcarTarefa(${contador}) class="item-icone">
+                <img class="img-icon" src="icons/verificar.png">
+            </div>
+            
+            <div onclick="marcarTarefa(${contador}) class="item-nome">
+                ${ValorInput}
+            </div>
+
+            <div class="item-botão">
+                <button onclick="deletar(${contador})" class="delete">Deletar</button>
+            </div>
+        </div>`; 
         main.innerHTML += NovoItem;
+        input.value = "";
+        input.focus();
     }
 }
-console.log(testando)
+
+// DELETAR ITEM DA LISTA
+function deletar(id){
+    let tarefa = document.getElementById(id);
+    tarefa.remove();
+}
+
+// PRESS ENTER PARA ADD
+input.addEventListener("keyup", function(event){
+    if(event.keyCode === 13){
+        event.preventDefault();
+        btnAdd.click();
+    }
+})
